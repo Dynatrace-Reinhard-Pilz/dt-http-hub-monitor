@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="com.dynatrace.monitors.httphub.monitor"
+         point="com.dynatrace.diagnostics.pdk.monitor">
+      <plugin
+            class="com.dynatrace.monitors.httphub.HttpHubMonitor"
+            configid="com.dynatrace.monitors.httphub.configid">
+      </plugin>
+   </extension>
+   <extension
+         id="com.dynatrace.monitors.httphub.configid"
+         name="Proxy Monitor Configuration"
+         point="com.dynatrace.diagnostics.pdk.pluginconfig">
+      <information>
+         <author
+               value="reinhard.pilz@dynatrace.com">
+         </author>
+         <supportlevel
+               value="unsupported">
+         </supportlevel></information>
+      <configuration>
+         <property
+               default="localhost"
+               key="com.dynatrace.monitors.httphub.config.host"
+               label="HTTP Server Host"
+               type="string">
+         </property>
+         <property
+               default="80"
+               key="com.dynatrace.monitors.httphub.config.port"
+               label="HTTP Server Port"
+               type="long">
+         </property>
+         <property
+               default="8080"
+               key="com.dynatrace.monitors.httphub.config.bindport"
+               label="HTTP Listen Port"
+               type="long">
+         </property></configuration>
+   </extension>
+
+</plugin>
